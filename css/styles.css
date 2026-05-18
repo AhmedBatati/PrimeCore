@@ -34,6 +34,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -44,6 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 a {
@@ -1423,6 +1426,13 @@ p {
     gap: 1.5rem;
   }
 
+  /* Prevent any grid or flex child from punching past the viewport */
+  .container,
+  .filter-bar-inner {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .filter-bar-inner {
     gap: 1rem;
     padding: 0 1rem;
@@ -1438,6 +1448,29 @@ p {
 
   .catalog-grid {
     gap: 1rem;
+  }
+
+  /* 4-col category row → 2×2 grid */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* Single-column stacking for wide multi-col grids */
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .packages-inner-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 100%;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .about-narrative {
@@ -1537,5 +1570,17 @@ p {
 
   .offer-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Ensure wide package cards don't overflow on small phones */
+  .packages-inner-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  /* Tighten category grid to full-width cards on very small phones */
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 }
