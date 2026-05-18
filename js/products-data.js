@@ -1,0 +1,302 @@
+const products = [
+  {
+    id: 1,
+    name: "MacBook Pro 16\" M3 Max",
+    category: "laptops",
+    condition: "new",
+    price: 3499,
+    currency: "USD",
+    shortDescription: "Apple's most powerful laptop featuring the M3 Max chip with a stunning 16.2-inch Liquid Retina XDR display.",
+    fullDescription: "Engineered for professionals who demand uncompromising performance, the MacBook Pro 16\" with M3 Max delivers groundbreaking compute power with a 16-core CPU and 40-core GPU. The Liquid Retina XDR display offers extreme dynamic range with 1600 nits peak brightness, while the advanced thermal system keeps the machine cool under heavy workloads. With up to 22 hours of battery life and a suite of pro connectivity including Thunderbolt 4, HDMI, and an SDXC slot, this machine redefines what a laptop can achieve.",
+    specifications: {
+      "Processor": "Apple M3 Max (16-core CPU, 40-core GPU)",
+      "RAM": "48 GB Unified Memory",
+      "Storage": "1 TB SSD",
+      "Display": "16.2\" Liquid Retina XDR, 3456x2234",
+      "Battery": "Up to 22 hours"
+    },
+    images: ["images/products/product-1-1.jpg", "images/products/product-1-2.jpg", "images/products/product-1-3.jpg"],
+    featured: true,
+    dateAdded: "2026-01-15"
+  },
+  {
+    id: 2,
+    name: "Dell XPS 16",
+    category: "laptops",
+    condition: "new",
+    price: 2199,
+    currency: "USD",
+    shortDescription: "A premium ultrabook with Intel Core Ultra 9, edge-to-edge OLED display, and a machined aluminum chassis.",
+    fullDescription: "The Dell XPS 16 redefines the Windows premium laptop experience with an Intel Core Ultra 9 processor and Intel Arc graphics. Its 16-inch 4K OLED InfinityEdge display pushes bezels to the absolute minimum, delivering a 93.9% screen-to-body ratio for an immersive visual experience. CNC machined aluminum and Gorilla Glass 3 combine durability with elegance, while the haptic touchpad and edge-to-edge keyboard provide a tactile experience second to none.",
+    specifications: {
+      "Processor": "Intel Core Ultra 9 285H",
+      "RAM": "32 GB LPDDR5X",
+      "Storage": "1 TB PCIe Gen 4 SSD",
+      "Display": "16\" 4K OLED, 3840x2400",
+      "Battery": "Up to 14 hours"
+    },
+    images: ["images/products/product-2-1.jpg", "images/products/product-2-2.jpg"],
+    featured: true,
+    dateAdded: "2026-02-10"
+  },
+  {
+    id: 3,
+    name: "Lenovo ThinkPad X1 Carbon Gen 12",
+    category: "laptops",
+    condition: "new",
+    price: 1849,
+    currency: "USD",
+    shortDescription: "The business flagship with a 2.8K OLED display, MIL-STD-810H durability, and an Intel Core Ultra 7 processor.",
+    fullDescription: "The Lenovo ThinkPad X1 Carbon Gen 12 continues a legacy of enterprise excellence with a featherlight 2.4-pound carbon fiber chassis that meets MIL-STD-810H military-grade durability standards. Powered by the Intel Core Ultra 7 processor with vPro, it delivers enterprise-class security and manageability. The 14-inch 2.8K OLED display covers 100% DCI-P3 color gamut, making it ideal for design and data work alike, while the iconic TrackPoint and haptic touchpad ensure precision input.",
+    specifications: {
+      "Processor": "Intel Core Ultra 7 165U",
+      "RAM": "16 GB LPDDR5X",
+      "Storage": "512 GB PCIe Gen 4 SSD",
+      "Display": "14\" 2.8K OLED, 2880x1800",
+      "Weight": "2.4 lbs"
+    },
+    images: ["images/products/product-3-1.jpg", "images/products/product-3-2.jpg"],
+    featured: false,
+    dateAdded: "2026-03-05"
+  },
+  {
+    id: 4,
+    name: "ASUS ROG Zephyrus G16",
+    category: "laptops",
+    condition: "used",
+    price: 1599,
+    currency: "USD",
+    shortDescription: "A premium gaming laptop with an Intel Core i9 and NVIDIA GeForce RTX 4070 in a slim chassis.",
+    fullDescription: "The ASUS ROG Zephyrus G16 proves that gaming power does not require a bulky frame. At just 0.7 inches thin and 4.3 pounds, this machine houses an Intel Core i9-14900HX and NVIDIA GeForce RTX 4070 graphics. The 16-inch QHD Nebula Display with a 240 Hz refresh rate and 100% DCI-P3 coverage delivers silky smooth visuals for competitive gaming and content creation. The CNC aluminum chassis features a stunning Slate Gray finish with ROG's signature AniMe Matrix lighting array.",
+    specifications: {
+      "Processor": "Intel Core i9-14900HX",
+      "GPU": "NVIDIA GeForce RTX 4070 8 GB",
+      "RAM": "16 GB DDR5",
+      "Storage": "1 TB PCIe Gen 4 SSD",
+      "Display": "16\" QHD 240 Hz, 2560x1600"
+    },
+    images: ["images/products/product-4-1.jpg", "images/products/product-4-2.jpg"],
+    featured: false,
+    dateAdded: "2026-01-28"
+  },
+  {
+    id: 5,
+    name: "Microsoft Surface Laptop 7",
+    category: "laptops",
+    condition: "new",
+    price: 1299,
+    currency: "USD",
+    shortDescription: "Microsoft's Copilot+ PC with Snapdragon X Elite processor and a vibrant PixelSense touchscreen.",
+    fullDescription: "The Microsoft Surface Laptop 7 marks a new era in Windows computing with the Snapdragon X Elite processor, delivering exceptional performance per watt and always-on connectivity. The 15-inch PixelSense touchscreen with 2496x1664 resolution and 120 Hz refresh rate supports both touch and Surface Slim Pen input. With up to 15 hours of battery life, a sleek Alcantara palm rest, and full support for Windows 11 AI features via the dedicated NPU, it is the ultimate productivity companion for the modern workforce.",
+    specifications: {
+      "Processor": "Snapdragon X Elite X1E-80-100",
+      "RAM": "16 GB LPDDR5X",
+      "Storage": "512 GB SSD",
+      "Display": "15\" PixelSense, 2496x1664, 120 Hz",
+      "Battery": "Up to 15 hours"
+    },
+    images: ["images/products/product-5-1.jpg", "images/products/product-5-2.jpg"],
+    featured: false,
+    dateAdded: "2026-04-01"
+  },
+  {
+    id: 6,
+    name: "iPhone 15 Pro Max",
+    category: "phones",
+    condition: "new",
+    price: 1199,
+    currency: "USD",
+    shortDescription: "Apple's flagship with a titanium design, A17 Pro chip, and a 48 MP pro camera system with 5x optical zoom.",
+    fullDescription: "The iPhone 15 Pro Max represents the pinnacle of smartphone engineering with a lightweight titanium aerospace-grade design and the industry-first A17 Pro chip built on a 3 nm process. The 6.7-inch Super Retina XDR display with ProMotion delivers a 120 Hz adaptive refresh rate, while the pro camera system features a 48 MP main sensor with a nano-scale coating to reduce lens flare. The 5x optical telephoto zoom, LiDAR scanner, and Action button redefine mobile photography and productivity.",
+    specifications: {
+      "Processor": "A17 Pro (3 nm)",
+      "Display": "6.7\" Super Retina XDR, 2796x1290, 120 Hz",
+      "Camera": "48 MP Main + 12 MP Ultra Wide + 12 MP Telephoto 5x",
+      "Storage": "256 GB",
+      "Battery": "Up to 29 hours video playback"
+    },
+    images: ["images/products/product-6-1.jpg", "images/products/product-6-2.jpg", "images/products/product-6-3.jpg"],
+    featured: true,
+    dateAdded: "2026-01-10"
+  },
+  {
+    id: 7,
+    name: "Samsung Galaxy S24 Ultra",
+    category: "phones",
+    condition: "new",
+    price: 1299,
+    currency: "USD",
+    shortDescription: "The ultimate Android flagship with Galaxy AI, a titanium frame, and a 200 MP quad-camera system.",
+    fullDescription: "Samsung's Galaxy S24 Ultra sets a new standard for mobile intelligence with Galaxy AI features that enable real-time translation, generative photo editing, and smart note summarization. The titanium-armored frame and Corning Gorilla Armor glass provide unmatched durability, while the 6.8-inch Dynamic AMOLED 2X display with 2600 nits peak brightness is the brightest in the industry. The 200 MP quad-camera with dual telephoto lenses (3x and 5x optical) and the integrated S Pen make this the most versatile device for creators and professionals alike.",
+    specifications: {
+      "Processor": "Snapdragon 8 Gen 3 for Galaxy",
+      "Display": "6.8\" Dynamic AMOLED 2X, 3120x1440, 120 Hz",
+      "Camera": "200 MP + 50 MP + 12 MP + 10 MP",
+      "Storage": "512 GB",
+      "Battery": "5000 mAh, up to 30 hours video"
+    },
+    images: ["images/products/product-7-1.jpg", "images/products/product-7-2.jpg"],
+    featured: true,
+    dateAdded: "2026-02-20"
+  },
+  {
+    id: 8,
+    name: "Google Pixel 9 Pro",
+    category: "phones",
+    condition: "new",
+    price: 999,
+    currency: "USD",
+    shortDescription: "Google's AI-powered flagship with Tensor G4, a 50 MP camera, and seven years of OS updates.",
+    fullDescription: "The Google Pixel 9 Pro delivers the purest Android experience with the custom Tensor G4 chip that unlocks advanced AI capabilities like Magic Eraser, Best Take, and real-time call screening. The 6.3-inch LTPO OLED display with 120 Hz adaptive refresh rate is protected by Gorilla Glass Victus 2, and the 50 MP main camera with Octa-PD autofocus captures stunning detail in any lighting condition. With seven years of Pixel Feature Drops, OS updates, and security patches, the Pixel 9 Pro is the longest-supported smartphone on the market.",
+    specifications: {
+      "Processor": "Google Tensor G4",
+      "Display": "6.3\" LTPO OLED, 2856x1280, 120 Hz",
+      "Camera": "50 MP Main + 48 MP Ultra Wide + 48 MP Telephoto",
+      "Storage": "128 GB",
+      "OS": "Android 15, 7 years of updates"
+    },
+    images: ["images/products/product-8-1.jpg", "images/products/product-8-2.jpg"],
+    featured: false,
+    dateAdded: "2026-03-12"
+  },
+  {
+    id: 9,
+    name: "OnePlus 12",
+    category: "phones",
+    condition: "used",
+    price: 699,
+    currency: "USD",
+    shortDescription: "The flagship killer reborn with a Snapdragon 8 Gen 3, Hasselblad cameras, and 100W SUPERVOOC charging.",
+    fullDescription: "The OnePlus 12 reclaims the flagship killer title with a Snapdragon 8 Gen 3 processor, up to 16 GB of RAM, and a 100W SUPERVOOC charging system that takes the 5400 mAh battery from 0 to 100 in just 26 minutes. The 6.82-inch ProXDR LTPO AMOLED display with 4500 nits peak brightness is one of the brightest in the market. Co-engineered with Hasselblad, the triple camera system delivers natural color calibration, and the signature alert slider returns for uninterrupted focus.",
+    specifications: {
+      "Processor": "Snapdragon 8 Gen 3",
+      "Display": "6.82\" ProXDR LTPO AMOLED, 3168x1440, 120 Hz",
+      "Camera": "50 MP + 64 MP Periscope + 48 MP Ultra Wide",
+      "RAM": "16 GB",
+      "Charging": "100W SUPERVOOC, 50W Wireless"
+    },
+    images: ["images/products/product-9-1.jpg", "images/products/product-9-2.jpg"],
+    featured: false,
+    dateAdded: "2026-02-05"
+  },
+  {
+    id: 10,
+    name: "Sony Xperia 1 VI",
+    category: "phones",
+    condition: "new",
+    price: 1099,
+    currency: "USD",
+    shortDescription: "Sony's multimedia flagship with a 6.5-inch 4K HDR OLED display and professional-grade camera controls.",
+    fullDescription: "The Sony Xperia 1 VI is purpose-built for content creators and media enthusiasts, featuring a 6.5-inch 4K HDR OLED display with a 21:9 cinematic aspect ratio and the world's first BRAVIA core calibration. Powered by the Snapdragon 8 Gen 3 and packing a 48 MP triple camera system with real-time eye autofocus for humans and animals, it draws directly from Sony's Alpha mirrorless camera technology. The 3.5 mm headphone jack with premium audio DAC, front-facing stereo speakers, and a dedicated shutter button make it the ultimate creator-centric smartphone.",
+    specifications: {
+      "Processor": "Snapdragon 8 Gen 3",
+      "Display": "6.5\" 4K HDR OLED, 3840x1644, 120 Hz",
+      "Camera": "48 MP + 12 MP Telephoto + 12 MP Ultra Wide",
+      "Storage": "256 GB + microSD up to 1 TB",
+      "Audio": "3.5 mm jack, Dolby Atmos, Full-stage stereo"
+    },
+    images: ["images/products/product-10-1.jpg", "images/products/product-10-2.jpg"],
+    featured: false,
+    dateAdded: "2026-04-10"
+  },
+  {
+    id: 11,
+    name: "AirPods Max 2",
+    category: "accessories",
+    condition: "new",
+    price: 549,
+    currency: "USD",
+    shortDescription: "Apple's over-ear headphones with H2 chip, USB-C, and advanced active noise cancellation.",
+    fullDescription: "The AirPods Max 2 deliver a completely reimagined over-ear experience with Apple's H2 chip driving adaptive audio, personalized spatial audio with dynamic head tracking, and a next-level active noise cancellation system. The knit-mesh canopy headband and memory foam ear cushions provide exceptional comfort for extended listening sessions. With USB-C charging, up to 20 hours of battery life with ANC enabled, and seamless iCloud switching across all Apple devices, they are the definitive premium headphones for the Apple ecosystem.",
+    specifications: {
+      "Driver": "Apple-designed 40 mm dynamic drivers",
+      "Chip": "Apple H2",
+      "Battery Life": "20 hours with ANC",
+      "Connectivity": "Bluetooth 5.3, USB-C",
+      "Weight": "13.6 oz"
+    },
+    images: ["images/products/product-11-1.jpg", "images/products/product-11-2.jpg"],
+    featured: false,
+    dateAdded: "2026-03-18"
+  },
+  {
+    id: 12,
+    name: "Samsung Galaxy Buds3 Pro",
+    category: "accessories",
+    condition: "used",
+    price: 199,
+    currency: "USD",
+    shortDescription: "Samsung's premium earbuds with dual-driver audio, adaptive ANC, and Galaxy AI features.",
+    fullDescription: "The Samsung Galaxy Buds3 Pro offer a refined audio experience with a dual-driver system that separates bass and treble for studio-quality sound. Adaptive active noise cancellation intelligently adjusts to your environment, while Galaxy AI features like Interpreter mode and voice-controlled commands add a layer of intelligence beyond typical earbuds. The blade-light design with enhanced IP57 water and dust resistance makes them perfect for active lifestyles, and wireless Qi charging keeps them powered throughout the day.",
+    specifications: {
+      "Driver": "Dual-driver (woofer + tweeter)",
+      "Battery Life": "6 hours ANC, 26 hours with case",
+      "Connectivity": "Bluetooth 5.4, Samsung Seamless Codec",
+      "Water Resistance": "IP57",
+      "Color": "Silver"
+    },
+    images: ["images/products/product-12-1.jpg", "images/products/product-12-2.jpg"],
+    featured: false,
+    dateAdded: "2026-04-05"
+  },
+  {
+    id: 13,
+    name: "Apple Watch Ultra 2",
+    category: "accessories",
+    condition: "new",
+    price: 799,
+    currency: "USD",
+    shortDescription: "The most rugged Apple Watch with a precision dual-frequency GPS and a 3000-nit display.",
+    fullDescription: "The Apple Watch Ultra 2 is built for endurance athletes and explorers with a 49 mm titanium case, a flat sapphire crystal display that reaches 3000 nits — the brightest display Apple has ever made — and a programmable Action button for instant control. The precision dual-frequency GPS (L1 + L5) delivers exceptional accuracy even in challenging urban and wilderness environments. With dive certification to 40 meters, a siren for emergency alerts, and up to 36 hours of battery life on a single charge, it is the ultimate sports and adventure companion.",
+    specifications: {
+      "Processor": "Apple S9 SiP",
+      "Display": "49 mm, 3000 nits, sapphire crystal",
+      "Battery Life": "36 hours normal, 72 hours low power",
+      "Water Resistance": "WR100, EN13319 dive certified",
+      "Connectivity": "Bluetooth 5.3, Wi-Fi, LTE, L1+L5 GPS"
+    },
+    images: ["images/products/product-13-1.jpg", "images/products/product-13-2.jpg"],
+    featured: true,
+    dateAdded: "2026-01-05"
+  },
+  {
+    id: 14,
+    name: "Logitech MX Master 3S",
+    category: "accessories",
+    condition: "new",
+    price: 99,
+    currency: "USD",
+    shortDescription: "Logitech's flagship wireless mouse with 8K DPI tracking, quiet clicks, and MagSpeed electromagnetic scrolling.",
+    fullDescription: "The Logitech MX Master 3S is the gold standard for productivity mice, featuring an 8K DPI Darkfield laser sensor that tracks on any surface including glass. The MagSpeed electromagnetic scroll wheel automatically shifts between ratchet and free-spin modes, letting you fly through thousands of lines per second. With Quiet Click technology, three programmable thumb buttons, and Flow cross-computer control, it seamlessly bridges workflow across up to three devices running Windows, macOS, or Linux. A full charge lasts up to 70 days.",
+    specifications: {
+      "Sensor": "8000 DPI Darkfield Laser",
+      "Battery Life": "70 days, 1 hour full charge via USB-C",
+      "Connectivity": "Bluetooth 5.0, Logitech Bolt USB Receiver",
+      "Buttons": "7 programmable buttons",
+      "Weight": "4.97 oz"
+    },
+    images: ["images/products/product-14-1.jpg", "images/products/product-14-2.jpg"],
+    featured: false,
+    dateAdded: "2026-02-28"
+  },
+  {
+    id: 15,
+    name: "Sony WH-1000XM5",
+    category: "accessories",
+    condition: "used",
+    price: 232,
+    currency: "USD",
+    shortDescription: "Industry-leading noise canceling headphones with 30 hours of battery and Sony's Integrated Processor V1.",
+    fullDescription: "The Sony WH-1000XM5 represents the pinnacle of noise-canceling headphone technology, featuring the Integrated Processor V1 and dual noise sensor microphones that deliver unprecedented silence. The 30 mm drivers produce exceptionally clear audio with deep bass and natural mids, while Adaptive Sound Control automatically adjusts to your environment. With 30 hours of battery life, multipoint Bluetooth connectivity, and a lightweight design with soft-fit leather headband, these headphones are the top choice for frequent travelers and audio purists alike.",
+    specifications: {
+      "Driver": "30 mm, gold-plated diaphragm",
+      "Battery Life": "30 hours with ANC",
+      "Connectivity": "Bluetooth 5.2, Multipoint, LDAC",
+      "Weight": "8.95 oz",
+      "Noise Canceling": "Dual-processor, 8 microphones"
+    },
+    images: ["images/products/product-15-1.jpg", "images/products/product-15-2.jpg"],
+    featured: false,
+    dateAdded: "2026-03-25"
+  }
+];
