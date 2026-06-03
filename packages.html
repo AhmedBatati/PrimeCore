@@ -168,73 +168,92 @@
   </a>
 
   <script src="js/packages-data.js"></script>
+  <script src="js/price-utils.js"></script>
+  <script src="js/admin-store.js"></script>
   <script>
     (function () {
       'use strict';
-      var grid = document.getElementById('packages-catalog-grid');
-      if (!grid || typeof packages === 'undefined') return;
 
-      for (var i = 0; i < packages.length; i++) {
-        var pkg = packages[i];
+      function renderPackages() {
+        var prices = window.PrimeCorePrices;
 
-        var card = document.createElement('div');
-        card.className = 'package-card' + (pkg.featured ? ' featured' : '');
-
-        if (pkg.featured) {
-          var badge = document.createElement('span');
-          badge.className = 'pkg-badge';
-          badge.textContent = 'باقة مميزة';
-          card.appendChild(badge);
+        function formatPrice(amount, currency) {
+          return prices ? prices.formatPrice(amount, currency) : ((Number(amount) || 0) + ' ' + (currency || 'SAR'));
         }
 
-        var type = document.createElement('div');
-        type.className = 'pkg-type';
-        type.textContent = pkg.type;
-        card.appendChild(type);
+        var grid = document.getElementById('packages-catalog-grid');
+        if (!grid || typeof packages === 'undefined') return;
 
-        var name = document.createElement('h3');
-        name.textContent = pkg.name;
-        card.appendChild(name);
+        grid.innerHTML = '';
 
-        var speed = document.createElement('div');
-        speed.className = 'pkg-speed';
-        speed.textContent = pkg.speed + ' \u2014 ' + pkg.dataLimit;
-        card.appendChild(speed);
+        for (var i = 0; i < packages.length; i++) {
+          var pkg = packages[i];
 
-        var price = document.createElement('div');
-        price.className = 'pkg-price';
-        var priceText = document.createTextNode('$' + pkg.priceMonthly + '\u00a0');
-        var priceUnit = document.createElement('span');
-        priceUnit.textContent = '/ شهر';
-        price.appendChild(priceText);
-        price.appendChild(priceUnit);
-        card.appendChild(price);
+          var card = document.createElement('div');
+          card.className = 'package-card' + (pkg.featured ? ' featured' : '');
 
-        var desc = document.createElement('p');
-        desc.className = 'card-text';
-        desc.style.marginBottom = '1rem';
-        desc.textContent = pkg.description;
-        card.appendChild(desc);
+          if (pkg.featured) {
+            var badge = document.createElement('span');
+            badge.className = 'pkg-badge';
+            badge.textContent = 'باقة مميزة';
+            card.appendChild(badge);
+          }
 
-        var featuresList = document.createElement('ul');
-        featuresList.className = 'package-features';
-        for (var j = 0; j < pkg.features.length; j++) {
-          var li = document.createElement('li');
-          li.textContent = pkg.features[j];
-          featuresList.appendChild(li);
+          var type = document.createElement('div');
+          type.className = 'pkg-type';
+          type.textContent = pkg.type;
+          card.appendChild(type);
+
+          var name = document.createElement('h3');
+          name.textContent = pkg.name;
+          card.appendChild(name);
+
+          var speed = document.createElement('div');
+          speed.className = 'pkg-speed';
+          speed.textContent = pkg.speed + ' \u2014 ' + pkg.dataLimit;
+          card.appendChild(speed);
+
+          var price = document.createElement('div');
+          price.className = 'pkg-price';
+          var priceText = document.createTextNode(formatPrice(pkg.priceMonthly, pkg.currency) + '\u00a0');
+          var priceUnit = document.createElement('span');
+          priceUnit.textContent = '/ شهر';
+          price.appendChild(priceText);
+          price.appendChild(priceUnit);
+          card.appendChild(price);
+
+          var desc = document.createElement('p');
+          desc.className = 'card-text';
+          desc.style.marginBottom = '1rem';
+          desc.textContent = pkg.description;
+          card.appendChild(desc);
+
+          var featuresList = document.createElement('ul');
+          featuresList.className = 'package-features';
+          for (var j = 0; j < pkg.features.length; j++) {
+            var li = document.createElement('li');
+            li.textContent = pkg.features[j];
+            featuresList.appendChild(li);
+          }
+          card.appendChild(featuresList);
+
+          var cta = document.createElement('a');
+          cta.href = 'https://wa.me/1234567890?text=' + encodeURIComponent('مرحباً PrimeCore، أنا مهتم بباقة ' + pkg.name + ' (' + pkg.speed + '). يرجى مشاركة المزيد من التفاصيل.');
+          cta.className = 'btn btn-gradient';
+          cta.target = '_blank';
+          cta.rel = 'noopener noreferrer';
+          cta.textContent = 'استفسر الآن';
+          card.appendChild(cta);
+
+          grid.appendChild(card);
         }
-        card.appendChild(featuresList);
-
-        var cta = document.createElement('a');
-        cta.href = 'https://wa.me/1234567890?text=' + encodeURIComponent('مرحباً PrimeCore، أنا مهتم بباقة ' + pkg.name + ' (' + pkg.speed + '). يرجى مشاركة المزيد من التفاصيل.');
-        cta.className = 'btn btn-gradient';
-        cta.target = '_blank';
-        cta.rel = 'noopener noreferrer';
-        cta.textContent = 'استفسر الآن';
-        card.appendChild(cta);
-
-        grid.appendChild(card);
       }
+
+      var ready = window.PrimeCoreStore && window.PrimeCoreStore.ready
+        ? window.PrimeCoreStore.ready
+        : Promise.resolve();
+
+      ready.then(renderPackages, renderPackages);
     })();
   </script>
   <script src="js/app.js"></script>

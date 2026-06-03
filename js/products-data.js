@@ -1,4 +1,4 @@
-const products = [
+var products = [
   {
     id: 1,
     name: "MacBook Pro 16\" M3 Max",

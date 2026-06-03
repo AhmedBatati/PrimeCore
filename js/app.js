@@ -8,29 +8,35 @@
 
   /* ===== HAMBURGER TOGGLE ===== */
   if (hamburger && nav) {
+    function closeNav() {
+      hamburger.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('open');
+    }
+
     hamburger.addEventListener('click', function () {
       const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', !isOpen);
-      nav.classList.toggle('open');
-      document.body.style.overflow = isOpen ? '' : 'hidden';
+      nav.classList.toggle('open', !isOpen);
     });
 
     document.addEventListener('click', function (e) {
       if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
         if (hamburger.getAttribute('aria-expanded') === 'true') {
-          hamburger.setAttribute('aria-expanded', 'false');
-          nav.classList.remove('open');
-          document.body.style.overflow = '';
+          closeNav();
         }
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+        closeNav();
       }
     });
 
     const navLinks = nav.querySelectorAll('a');
     navLinks.forEach(function (link) {
       link.addEventListener('click', function () {
-        hamburger.setAttribute('aria-expanded', 'false');
-        nav.classList.remove('open');
-        document.body.style.overflow = '';
+        closeNav();
       });
     });
   }

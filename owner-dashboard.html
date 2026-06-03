@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>لوحة المالك - PrimeCore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <header class="admin-topbar">
+      <div class="admin-title">
+        <span class="section-label">PrimeCore</span>
+        <h1>لوحة المالك</h1>
+        <p>إدارة المنتجات وباقات الإنترنت من مكان واحد.</p>
+      </div>
+
+      <div class="admin-actions">
+        <a href="index.html" class="btn btn-outline">عرض الموقع</a>
+        <button class="btn btn-outline" type="button" id="export-data">تصدير نسخة</button>
+        <button class="btn btn-outline" type="button" id="import-data">استيراد نسخة</button>
+        <button class="btn btn-outline admin-danger" type="button" id="owner-logout">تسجيل خروج</button>
+        <input type="file" id="import-file" accept="application/json" hidden>
+      </div>
+    </header>
+
+    <section class="admin-layout" aria-label="إدارة المحتوى">
+      <aside class="admin-panel">
+        <div class="admin-panel-header">
+          <div class="admin-tabs" role="tablist" aria-label="نوع المحتوى">
+            <button class="admin-tab active" type="button" data-admin-view="products">المنتجات</button>
+            <button class="admin-tab" type="button" data-admin-view="packages">الباقات</button>
+          </div>
+        </div>
+
+        <div class="admin-panel-header">
+          <input class="admin-search" type="search" id="admin-search" placeholder="بحث">
+          <button class="btn btn-gradient" type="button" id="new-item">إضافة</button>
+        </div>
+
+        <div class="admin-list" id="admin-list" aria-live="polite"></div>
+      </aside>
+
+      <section class="admin-panel">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title" id="form-title">منتج جديد</h2>
+          <button class="btn btn-outline admin-danger" type="button" id="reset-current">استعادة الأصل</button>
+        </div>
+
+        <form class="admin-form" id="product-form" autocomplete="off">
+          <input type="hidden" id="product-id">
+
+          <div class="admin-form-grid">
+            <div class="admin-field">
+              <label for="product-name">اسم المنتج</label>
+              <input type="text" id="product-name" required>
+            </div>
+
+            <div class="admin-field">
+              <label for="product-price">السعر</label>
+              <input type="number" id="product-price" min="0" step="1" required>
+            </div>
+
+            <div class="admin-field">
+              <label for="product-category">الفئة</label>
+              <select id="product-category">
+                <option value="laptops">أجهزة كمبيوتر</option>
+                <option value="phones">هواتف</option>
+                <option value="accessories">ملحقات</option>
+              </select>
+            </div>
+
+            <div class="admin-field">
+              <label for="product-condition">الحالة</label>
+              <select id="product-condition">
+                <option value="new">جديد</option>
+                <option value="used">مستعمل</option>
+              </select>
+            </div>
+
+            <div class="admin-field">
+              <label for="product-currency">العملة</label>
+              <select id="product-currency">
+                <option value="SAR">الريال السعودي SAR</option>
+                <option value="USD">الدولار USD</option>
+                <option value="YER">الريال اليمني YER</option>
+              </select>
+            </div>
+
+            <label class="admin-check">
+              <input type="checkbox" id="product-featured">
+              منتج مميز
+            </label>
+
+            <label class="admin-check">
+              <input type="checkbox" id="product-active" checked>
+              ظاهر للزوار
+            </label>
+
+            <div class="admin-field full">
+              <label for="product-short">وصف مختصر</label>
+              <textarea id="product-short" required></textarea>
+            </div>
+
+            <div class="admin-field full">
+              <label for="product-full">الوصف الكامل</label>
+              <textarea id="product-full" required></textarea>
+            </div>
+
+            <div class="admin-field full">
+              <label for="product-images">روابط الصور، كل رابط في سطر</label>
+              <textarea id="product-images"></textarea>
+            </div>
+
+            <div class="admin-field full">
+              <label for="product-specs">المواصفات، مثال: المعالج: Apple M3</label>
+              <textarea id="product-specs"></textarea>
+            </div>
+          </div>
+
+          <div class="admin-form-actions">
+            <button class="btn btn-gradient" type="submit">حفظ المنتج</button>
+            <button class="btn btn-outline admin-danger" type="button" id="delete-product">حذف المنتج</button>
+          </div>
+        </form>
+
+        <form class="admin-form" id="package-form" autocomplete="off" hidden>
+          <input type="hidden" id="package-id">
+
+          <div class="admin-form-grid">
+            <div class="admin-field">
+              <label for="package-name">اسم الباقة</label>
+              <input type="text" id="package-name" required>
+            </div>
+
+            <div class="admin-field">
+              <label for="package-price">السعر الشهري</label>
+              <input type="number" id="package-price" min="0" step="1" required>
+            </div>
+
+            <div class="admin-field">
+              <label for="package-type">النوع</label>
+              <input type="text" id="package-type" value="satellite">
+            </div>
+
+            <div class="admin-field">
+              <label for="package-speed">السرعة</label>
+              <input type="text" id="package-speed" required>
+            </div>
+
+            <div class="admin-field">
+              <label for="package-limit">البيانات</label>
+              <input type="text" id="package-limit" value="لا محدود">
+            </div>
+
+            <label class="admin-check">
+              <input type="checkbox" id="package-featured">
+              باقة مميزة
+            </label>
+
+            <label class="admin-check">
+              <input type="checkbox" id="package-active" checked>
+              ظاهرة للزوار
+            </label>
+
+            <div class="admin-field full">
+              <label for="package-currency">العملة</label>
+              <select id="package-currency">
+                <option value="SAR">الريال السعودي SAR</option>
+                <option value="USD">الدولار USD</option>
+                <option value="YER">الريال اليمني YER</option>
+              </select>
+            </div>
+
+            <div class="admin-field full">
+              <label for="package-description">وصف الباقة</label>
+              <textarea id="package-description" required></textarea>
+            </div>
+
+            <div class="admin-field full">
+              <label for="package-features">المميزات، كل ميزة في سطر</label>
+              <textarea id="package-features" required></textarea>
+            </div>
+          </div>
+
+          <div class="admin-form-actions">
+            <button class="btn btn-gradient" type="submit">حفظ الباقة</button>
+            <button class="btn btn-outline admin-danger" type="button" id="delete-package">حذف الباقة</button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <div class="admin-toast" id="admin-toast" role="status"></div>
+
+  <script src="js/products-data.js"></script>
+  <script src="js/packages-data.js"></script>
+  <script src="js/price-utils.js"></script>
+  <script src="js/admin-store.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

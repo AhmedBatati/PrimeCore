@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>دخول المالك - PrimeCore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-page">
+  <main class="login-shell">
+    <section class="login-card admin-panel">
+      <div class="admin-title">
+        <span class="section-label">PrimeCore</span>
+        <h1>دخول المالك</h1>
+        <p>أدخل كلمة مرور المالك للوصول إلى لوحة الإدارة.</p>
+      </div>
+
+      <form class="admin-form" id="owner-login-form" autocomplete="off">
+        <div class="admin-field">
+          <label for="owner-password">كلمة المرور</label>
+          <input type="password" id="owner-password" required autofocus>
+        </div>
+
+        <p class="login-error" id="login-error" role="alert"></p>
+
+        <div class="admin-form-actions">
+          <button class="btn btn-gradient" type="submit">دخول</button>
+          <a href="index.html" class="btn btn-outline">العودة للموقع</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/admin-store.js"></script>
+  <script src="js/owner-login.js"></script>
+</body>
+</html>
