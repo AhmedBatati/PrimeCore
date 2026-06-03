@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="js/theme.js"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="admin-page">
@@ -20,6 +21,20 @@
       </div>
 
       <div class="admin-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="تبديل الوضع" aria-pressed="false">
+          <span class="theme-toggle-icon theme-toggle-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8z"/>
+            </svg>
+          </span>
+          <span class="sr-only">تبديل الوضع</span>
+        </button>
         <a href="index.html" class="btn btn-outline">عرض الموقع</a>
         <button class="btn btn-outline" type="button" id="export-data">تصدير نسخة</button>
         <button class="btn btn-outline" type="button" id="import-data">استيراد نسخة</button>
