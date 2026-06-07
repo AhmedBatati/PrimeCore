@@ -159,7 +159,7 @@
         }
 
         var pkgBtn = document.createElement('a');
-        pkgBtn.href = 'https://wa.me/1234567890?text=' + encodeURIComponent(
+        pkgBtn.href = 'https://wa.me/967781318564?text=' + encodeURIComponent(
           'Hello PrimeCore, I am interested in the ' + pkg.name + ' plan (' + pkg.speed + '). Please share more details.'
         );
         pkgBtn.target = '_blank';

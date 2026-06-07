@@ -58,7 +58,7 @@
 
   /* ===== WHATSAPP URL GENERATOR ===== */
   function generateWhatsAppUrl(product) {
-    var base = 'https://wa.me/1234567890';
+    var base = 'https://wa.me/967781318564';
     var priceFormatted = formatPrice(product.price, product.currency);
     var conditionLabel = product.condition === 'new' ? '\u062c\u062f\u064a\u062f' : '\u0645\u0633\u062a\u0639\u0645\u0644';
     var message = '\u0645\u0631\u062d\u0628\u0627 PrimeCore\u060c \u0623\u0631\u063a\u0628 \u0628\u0645\u0639\u0631\u0641\u0629 \u062a\u0641\u0627\u0635\u064a\u0644 \u062a\u0648\u0641\u0631 \u0647\u0630\u0627 \u0627\u0644\u0645\u0646\u062a\u062c: ' +
