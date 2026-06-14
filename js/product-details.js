@@ -98,7 +98,7 @@
 
     // Category label
     var categoryLabel = document.getElementById('meta-category');
-    if (categoryLabel) categoryLabel.textContent = product.category;
+    if (categoryLabel) categoryLabel.textContent = getCategoryLabel(product.category);
 
     // Title
     var title = document.getElementById('meta-title');
@@ -216,8 +216,7 @@
       }
 
       if (relatedLabel) {
-        var catDisplay = product.category.charAt(0).toUpperCase() + product.category.slice(1);
-        relatedLabel.textContent = catDisplay;
+        relatedLabel.textContent = getCategoryLabel(product.category);
       }
 
       for (var r = 0; r < related.length; r++) {
@@ -228,7 +227,7 @@
         var conditionLabel = p.condition === 'new' ? '\u062c\u062f\u064a\u062f' : '\u0645\u0633\u062a\u0639\u0645\u0644';
 
         var card = document.createElement('div');
-        card.className = 'pc-card';
+        card.className = 'pc-card related-product-card';
 
         var imgWrapper = document.createElement('div');
         imgWrapper.className = 'card-img-wrapper';
