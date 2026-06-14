@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
-<body>
+<body class="packages-page">
 
   <!-- ===== HEADER ===== -->
   <header class="site-header" role="banner">
@@ -73,25 +73,67 @@
   </header>
 
   <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero-sm">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">اتصال PrimeCore</span>
-        <h1>باقات <span class="gradient-text">الإنترنت</span></h1>
-        <p>اتصال فائق السرعة للمنازل والشركات — خطط ألياف ضوئية، محمولة، وأقمار صناعية مصممة للسرعة والموثوقية.</p>
+  <section class="page-hero-sm packages-hero">
+    <div class="container packages-hero-grid">
+      <div class="packages-hero-copy reveal">
+        <span class="section-label">حلول اتصال PrimeCore</span>
+        <h1>إنترنت سريع ومستقر للأعمال والمنازل</h1>
+        <p>باقات ألياف وستارلينك وحلول اتصال مختارة لمن يريد سرعة واضحة، تغطية موثوقة، ودعماً مباشراً قبل وبعد الاشتراك.</p>
+        <div class="packages-hero-actions" aria-label="مزايا حلول الإنترنت">
+          <span>تغطية حسب الموقع</span>
+          <span>اختيار الباقة المناسبة</span>
+          <span>تواصل مباشر عبر واتساب</span>
+        </div>
+      </div>
+
+      <div class="packages-signal-panel reveal reveal-delay-1" aria-label="مؤشرات جودة الاتصال">
+        <div class="signal-panel-top">
+          <span>PrimeCore Network</span>
+          <strong>جاهزية اتصال</strong>
+        </div>
+        <div class="signal-orbit" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="signal-bars" aria-hidden="true">
+          <span style="--bar: 38%"></span>
+          <span style="--bar: 58%"></span>
+          <span style="--bar: 78%"></span>
+          <span style="--bar: 96%"></span>
+        </div>
+        <div class="signal-panel-grid">
+          <div>
+            <span>استقرار</span>
+            <strong>مستمر</strong>
+          </div>
+          <div>
+            <span>تغطية</span>
+            <strong>محلية</strong>
+          </div>
+          <div>
+            <span>دعم</span>
+            <strong>مباشر</strong>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== PACKAGES CATALOG ===== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section packages-catalog-section">
     <div class="container">
+      <div class="packages-section-heading">
+        <span class="section-label">اختيارات واضحة</span>
+        <h2>اختر الباقة الأقرب لاستخدامك</h2>
+        <p>كل بطاقة تعرض السرعة، حدود البيانات، السعر الشهري، وأهم المزايا لتقارن بسرعة قبل التواصل.</p>
+      </div>
       <div id="packages-catalog-grid" class="featured-grid packages-catalog-grid"></div>
     </div>
   </section>
 
   <!-- ===== WHY PRIMECORE INTERNET ===== -->
-  <section class="section" style="background: var(--bg-secondary);">
+  <section class="section packages-trust-section">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">لماذا نحن</span>
@@ -207,7 +249,7 @@
           var pkg = packages[i];
 
           var card = document.createElement('div');
-          card.className = 'package-card' + (pkg.featured ? ' featured' : '');
+          card.className = 'package-card package-solution-card' + (pkg.featured ? ' featured' : '');
 
           if (pkg.featured) {
             var badge = document.createElement('span');
@@ -230,6 +272,22 @@
           speed.textContent = pkg.speed + ' \u2014 ' + pkg.dataLimit;
           card.appendChild(speed);
 
+          var metaStrip = document.createElement('div');
+          metaStrip.className = 'pkg-meta-strip';
+
+          var coverageMeta = document.createElement('span');
+          coverageMeta.textContent = 'تغطية حسب الموقع';
+          metaStrip.appendChild(coverageMeta);
+
+          var supportMeta = document.createElement('span');
+          supportMeta.textContent = 'دعم مباشر';
+          metaStrip.appendChild(supportMeta);
+
+          card.appendChild(metaStrip);
+
+          var priceBlock = document.createElement('div');
+          priceBlock.className = 'pkg-price-block';
+
           var price = document.createElement('div');
           price.className = 'pkg-price';
           var priceText = document.createTextNode(formatPrice(pkg.priceMonthly, pkg.currency) + '\u00a0');
@@ -237,11 +295,11 @@
           priceUnit.textContent = '/ شهر';
           price.appendChild(priceText);
           price.appendChild(priceUnit);
-          card.appendChild(price);
+          priceBlock.appendChild(price);
+          card.appendChild(priceBlock);
 
           var desc = document.createElement('p');
-          desc.className = 'card-text';
-          desc.style.marginBottom = '1rem';
+          desc.className = 'card-text pkg-description';
           desc.textContent = pkg.description;
           card.appendChild(desc);
 
@@ -256,7 +314,7 @@
 
           var cta = document.createElement('a');
           cta.href = 'https://wa.me/967781318564?text=' + encodeURIComponent('مرحباً PrimeCore، أنا مهتم بباقة ' + pkg.name + ' (' + pkg.speed + '). يرجى مشاركة المزيد من التفاصيل.');
-          cta.className = 'btn btn-gradient';
+          cta.className = 'btn btn-gradient package-cta';
           cta.target = '_blank';
           cta.rel = 'noopener noreferrer';
           cta.textContent = 'استفسر الآن';
