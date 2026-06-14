@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
-<body>
+<body class="about-page">
 
   <!-- ===== HEADER ===== -->
   <header class="site-header" role="banner">
@@ -73,22 +73,52 @@
   </header>
 
   <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero-sm">
-    <div class="container">
-      <div class="reveal">
+  <section class="page-hero-sm about-hero">
+    <div class="container about-hero-grid">
+      <div class="about-hero-copy reveal">
         <span class="section-label">عن PrimeCore</span>
-        <h1>قصتنا</h1>
-        <p>من رؤية جريئة إلى وجهة موثوقة للتكنولوجيا المتميزة — اكتشف ما يدفعنا للأمام.</p>
+        <h1>علامة تقنية منتقاة بثقة محلية</h1>
+        <p>PrimeCore ليست مجرد قائمة منتجات. نحن نبني تجربة تقنية عربية فاخرة تجمع الاختيار الدقيق، الحلول العملية، والدعم المحلي الذي يعرف احتياج العميل.</p>
+        <div class="about-hero-actions" aria-label="مبادئ PrimeCore">
+          <span>فاخر</span>
+          <span>موثوق</span>
+          <span>جريء</span>
+        </div>
+      </div>
+
+      <div class="about-brand-panel reveal reveal-delay-1" aria-label="هوية PrimeCore">
+        <div class="about-brand-mark">
+          <span class="logo-icon">
+            <svg width="46" height="46" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="28" height="28" rx="8" stroke="url(#aboutHeroGrad)" stroke-width="2.5" fill="none"/>
+              <path d="M10 16 L14 20 L22 12" stroke="url(#aboutHeroGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="aboutHeroGrad" x1="0" y1="0" x2="32" y2="32">
+                  <stop stop-color="#00d4ff"/>
+                  <stop offset="1" stop-color="#7c3aed"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <strong>PrimeCore</strong>
+        </div>
+        <p>وجهة مختارة للأجهزة، الإنترنت، والخدمات التقنية في حضرموت، بتفاصيل واضحة قبل القرار وبعده.</p>
+        <div class="about-proof-strip">
+          <span>اختيار بعناية</span>
+          <span>خبرة تقنية</span>
+          <span>دعم قريب</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== NARRATIVE ===== -->
-  <section class="section" style="padding-top: 0;">
+  <section class="section about-story-section">
     <div class="container">
       <div class="about-narrative">
         <div class="reveal">
-          <h2>ملتزمون <span class="gradient-text">بالتميز</span></h2>
+          <span class="section-label">القصة</span>
+          <h2>اختيار أقل، ثقة أعلى، تجربة أوضح</h2>
           <p>
             تأسست PrimeCore على اعتقاد بسيط: أن التكنولوجيا يجب أن تكون استثنائية وموثوقة ويمكن الوصول إليها دون مساومة. نحن نبحث في الأسواق العالمية للحصول على أفضل أجهزة الكمبيوتر المحمولة والهواتف الذكية والملحقات من العلامات التجارية الأكثر ابتكاراً في العالم، لضمان أن كل منتج في الكتالوج الخاص بنا يلبي معايير صارمة للأداء وجودة البناء والتصميم.
           </p>
@@ -97,9 +127,9 @@
           </p>
         </div>
         <div class="reveal reveal-delay-1">
-          <div style="background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 2.5rem; text-align: center;">
-            <div style="margin-bottom: 1rem;">
-              <svg width="56" height="56" viewBox="0 0 32 32" fill="none" style="margin: 0 auto;">
+          <div class="about-signature-panel">
+            <div class="about-signature-logo">
+              <svg width="56" height="56" viewBox="0 0 32 32" fill="none">
                 <rect x="2" y="2" width="28" height="28" rx="8" stroke="url(#logoGrad-narrative)" stroke-width="2.5" fill="none"/>
                 <path d="M10 16 L14 20 L22 12" stroke="url(#logoGrad-narrative)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <defs>
@@ -110,8 +140,13 @@
                 </defs>
               </svg>
             </div>
-            <h3 style="margin-bottom: 0.5rem;">Prime<span class="logo-accent" style="color: var(--accent-primary);">Core</span></h3>
-            <p style="font-style: italic; font-size: 0.9375rem; max-width: 100%;">"الجودة ليست فعلاً — إنها عادة."</p>
+            <h3>Prime<span class="logo-accent">Core</span></h3>
+            <p>"الجودة ليست فعلاً عابراً، بل طريقة اختيار."</p>
+            <div class="about-signature-list">
+              <span>منتجات منتقاة</span>
+              <span>حلول إنترنت عملية</span>
+              <span>خدمات تقنية محلية</span>
+            </div>
           </div>
         </div>
       </div>
@@ -119,16 +154,16 @@
   </section>
 
   <!-- ===== CORE VALUES ===== -->
-  <section class="section">
+  <section class="section about-values-section">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">قيمنا</span>
-        <h2>المبادئ <span class="gradient-text">الأساسية</span></h2>
-        <p>ثلاث ركائز تحدد كل ما نقوم به وكل منتج نختار عرضه.</p>
+        <h2>ما الذي يجعل PrimeCore مختلفاً</h2>
+        <p>ثلاث ركائز تحدد طريقة اختيارنا، طريقة تواصلنا، وكيف نبني الثقة قبل البيع وبعده.</p>
       </div>
 
       <div class="values-grid">
-        <div class="pc-card reveal reveal-delay-1">
+        <div class="pc-card about-value-card reveal reveal-delay-1">
           <div class="card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -138,7 +173,7 @@
           <p class="card-text">نحن لا نساوم أبداً على الجودة. يتم فحص كل منتج لضمان المتانة والأداء والتصميم قبل أن يحصل على مكان في الكتالوج الخاص بنا.</p>
         </div>
 
-        <div class="pc-card reveal reveal-delay-2">
+        <div class="pc-card about-value-card reveal reveal-delay-2">
           <div class="card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
@@ -148,7 +183,7 @@
           <p class="card-text">القليل يعني الكثير. نختار يدوياً فقط الأجهزة وباقات الخدمة الأكثر استثنائية، مما يوفر وقتك ويضمن أن يكون كل خيار رائعاً.</p>
         </div>
 
-        <div class="pc-card reveal reveal-delay-3">
+        <div class="pc-card about-value-card reveal reveal-delay-3">
           <div class="card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -162,12 +197,12 @@
   </section>
 
   <!-- ===== WHAT WE OFFER ===== -->
-  <section class="section" style="background: var(--bg-secondary);">
+  <section class="section about-offer-section">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">ما نقدمه</span>
-        <h2>فئاتنا</h2>
-        <p>استكشف ركائزنا الأربع الأساسية للتكنولوجيا المتميزة والاتصال.</p>
+        <h2>منظومة تقنية واحدة</h2>
+        <p>أجهزة، اتصال، ملحقات، وخدمات تقنية تتكامل حول احتياجك اليومي للعمل، الدراسة، والترفيه.</p>
       </div>
 
       <div class="offer-grid">
@@ -179,7 +214,7 @@
             </svg>
           </div>
           <h3>أجهزة كمبيوتر محمولة</h3>
-          <p>أجهزة كمبيوتر محمولة فائقة النحافة ومحطات عمل رائدة من Apple و Dell و Lenovo و ASUS و Microsoft — مصممة لتحقيق أقصى أداء.</p>
+          <p>أجهزة كمبيوتر محمولة فائقة النحافة ومحطات عمل رائدة من Apple و Dell و Lenovo و ASUS و Microsoft، مصممة لتحقيق أقصى أداء.</p>
         </div>
 
         <div class="offer-item reveal reveal-delay-2">
@@ -190,7 +225,7 @@
             </svg>
           </div>
           <h3>هواتف</h3>
-          <p>أحدث الهواتف الرائدة من Apple و Samsung و Google و OnePlus و Sony — تتميز بأحدث الكاميرات والشاشات والمعالجات.</p>
+          <p>أحدث الهواتف الرائدة من Apple و Samsung و Google و OnePlus و Sony، مع كاميرات وشاشات ومعالجات متقدمة.</p>
         </div>
 
         <div class="offer-item reveal reveal-delay-3">
@@ -202,7 +237,7 @@
             </svg>
           </div>
           <h3>ملحقات</h3>
-          <p>أجهزة صوتية ممتازة وأجهزة قابلة للارتداء وملحقات طرفية من قادة الصناعة — مصممة لتكملة ورفع مستوى إعدادك اليومي.</p>
+          <p>أجهزة صوتية ممتازة وأجهزة قابلة للارتداء وملحقات طرفية من قادة الصناعة، مصممة لرفع مستوى إعدادك اليومي.</p>
         </div>
 
         <div class="offer-item reveal reveal-delay-4">
@@ -215,7 +250,7 @@
             </svg>
           </div>
           <h3>نطاق عريض</h3>
-          <p>باقات إنترنت ألياف ضوئية فائقة السرعة، و 5G متنقل، وأقمار صناعية — اتصال موثوق للمنزل والعمل والمواقع النائية.</p>
+          <p>باقات إنترنت ألياف ضوئية فائقة السرعة، و 5G متنقل، وأقمار صناعية لاتصال موثوق للمنزل والعمل والمواقع النائية.</p>
         </div>
       </div>
     </div>

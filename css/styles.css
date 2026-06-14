@@ -2657,6 +2657,321 @@ html[data-theme="light"] .product-details-page .specs-table tr {
   max-width: 100%;
 }
 
+/* ===== ABOUT PAGE SHOWROOM ===== */
+.about-page {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(56, 189, 248, 0.09), transparent 28%),
+    radial-gradient(circle at 86% 28%, rgba(129, 140, 248, 0.07), transparent 24%),
+    var(--bg-primary);
+}
+
+.about-page .gradient-text {
+  background: none;
+  color: var(--accent-primary);
+  -webkit-text-fill-color: currentColor;
+}
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--header-height) + 4rem) 0 3.5rem;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 50%, rgba(56, 189, 248, 0.08) 50% 50.35%, transparent 50.35%),
+    linear-gradient(180deg, rgba(56, 189, 248, 0.055), transparent 64%);
+}
+
+.about-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.about-hero-copy {
+  max-width: 780px;
+}
+
+.about-hero .section-label,
+.about-story-section .section-label {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.about-hero h1 {
+  max-width: 760px;
+  margin: 0 0 1rem;
+  font-size: 4.25rem;
+  line-height: 1.03;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.about-hero p {
+  max-width: 660px;
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  line-height: 1.95;
+}
+
+.about-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.65rem;
+}
+
+.about-hero-actions span,
+.about-proof-strip span,
+.about-signature-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: var(--radius-sm);
+  background: rgba(56, 189, 248, 0.06);
+  color: var(--text-primary);
+  font-size: 0.83rem;
+  font-weight: 800;
+}
+
+.about-brand-panel {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  align-content: space-between;
+  gap: 1.4rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 54% 30%, rgba(56, 189, 248, 0.15), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), transparent 46%),
+    var(--bg-secondary);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+.about-brand-panel::before,
+.about-brand-panel::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.about-brand-panel::before {
+  width: 260px;
+  height: 260px;
+  inset-inline-start: 50%;
+  top: 70px;
+  transform: translateX(50%);
+}
+
+.about-brand-panel::after {
+  width: 140px;
+  height: 140px;
+  inset-inline-start: 50%;
+  top: 130px;
+  transform: translateX(50%);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.about-brand-mark,
+.about-brand-panel p,
+.about-proof-strip {
+  position: relative;
+  z-index: 1;
+}
+
+.about-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.about-brand-mark strong {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  color: var(--text-primary);
+}
+
+.about-brand-panel p {
+  max-width: 360px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+.about-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.about-proof-strip span {
+  min-height: 58px;
+  justify-content: center;
+  text-align: center;
+  padding: 0.65rem;
+}
+
+.about-story-section {
+  padding-top: 2.25rem;
+}
+
+.about-page .about-narrative {
+  gap: 2rem;
+  align-items: stretch;
+  padding-bottom: 0;
+}
+
+.about-page .about-narrative h2 {
+  max-width: 620px;
+  margin: 0.35rem 0 1.1rem;
+  font-size: 2.55rem;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.about-page .about-narrative p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.9;
+  text-wrap: pretty;
+}
+
+.about-signature-panel {
+  min-height: 100%;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: right;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(56, 189, 248, 0.055), transparent 38%),
+    var(--bg-secondary);
+}
+
+.about-signature-logo svg {
+  display: block;
+}
+
+.about-signature-panel h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0;
+}
+
+.about-signature-panel p {
+  margin-bottom: 0;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.about-signature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.about-values-section .section-header,
+.about-offer-section .section-header {
+  text-align: right;
+  margin-inline: 0;
+}
+
+.about-values-section .section-header p,
+.about-offer-section .section-header p {
+  margin-inline: 0;
+}
+
+.about-page .values-grid {
+  gap: 1.15rem;
+}
+
+.about-page .about-value-card {
+  background:
+    linear-gradient(180deg, rgba(56, 189, 248, 0.045), transparent 36%),
+    var(--bg-secondary);
+  border-color: rgba(56, 189, 248, 0.12);
+}
+
+.about-page .about-value-card .card-icon {
+  background: var(--accent-soft);
+}
+
+.about-offer-section {
+  background:
+    linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+}
+
+.about-page .offer-grid {
+  gap: 1rem;
+}
+
+.about-page .offer-item {
+  min-height: 100%;
+  display: grid;
+  align-content: start;
+  padding: 1.35rem;
+  text-align: right;
+  border-color: rgba(56, 189, 248, 0.12);
+  background:
+    linear-gradient(180deg, rgba(56, 189, 248, 0.045), transparent 40%),
+    var(--muted-surface);
+}
+
+.about-page .offer-item .oi-icon {
+  margin: 0 0 1rem;
+}
+
+.about-page .offer-item h3 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.about-page .offer-item p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+html[data-theme="light"] .about-page {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(2, 132, 199, 0.1), transparent 28%),
+    radial-gradient(circle at 86% 28%, rgba(79, 70, 229, 0.07), transparent 24%),
+    var(--bg-primary);
+}
+
+html[data-theme="light"] .about-brand-panel,
+html[data-theme="light"] .about-signature-panel,
+html[data-theme="light"] .about-page .about-value-card,
+html[data-theme="light"] .about-page .offer-item {
+  border-color: rgba(2, 132, 199, 0.14);
+  background:
+    linear-gradient(180deg, rgba(2, 132, 199, 0.04), transparent 38%),
+    var(--bg-secondary);
+}
+
+html[data-theme="light"] .about-hero-actions span,
+html[data-theme="light"] .about-proof-strip span,
+html[data-theme="light"] .about-signature-list span {
+  background: rgba(255, 255, 255, 0.78);
+}
+
 /* ===== CONTACT PAGE ===== */
 .contact-grid {
   display: grid;
@@ -4602,5 +4917,84 @@ html[data-theme="light"] textarea::placeholder {
   .contact-panel-top {
     flex-direction: column;
     gap: 0.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-brand-panel {
+    max-width: 560px;
+  }
+
+  .about-page .about-narrative {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .offer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: calc(var(--header-height) + 2.25rem) 0 2.25rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2.35rem;
+    line-height: 1.12;
+  }
+
+  .about-hero p {
+    font-size: 0.96rem;
+    line-height: 1.85;
+  }
+
+  .about-brand-panel {
+    min-height: 320px;
+    padding: 1.1rem;
+  }
+
+  .about-proof-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .about-proof-strip span {
+    min-height: 42px;
+  }
+
+  .about-page .about-narrative h2,
+  .about-values-section .section-header h2,
+  .about-offer-section .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-signature-panel {
+    padding: 1.25rem;
+  }
+
+  .about-page .values-grid,
+  .about-page .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 2.05rem;
+  }
+
+  .about-hero-actions span,
+  .about-signature-list span {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-brand-panel {
+    min-height: 300px;
   }
 }
