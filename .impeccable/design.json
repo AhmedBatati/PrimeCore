@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 2,
+  "name": "PrimeCore Design System",
+  "register": "brand",
+  "generatedAt": "2026-06-14T03:22:23+03:00",
+  "sources": [
+    "PRODUCT.md",
+    "css/styles.css"
+  ],
+  "colorMeta": {
+    "modeStrategy": "dark-first with a polished soft light companion",
+    "cssVariables": {
+      "bgPrimary": "--bg-primary",
+      "bgSecondary": "--bg-secondary",
+      "bgTertiary": "--bg-tertiary",
+      "accentPrimary": "--accent-primary",
+      "accentSecondary": "--accent-secondary",
+      "accentGradient": "--accent-gradient",
+      "textPrimary": "--text-primary",
+      "textSecondary": "--text-secondary",
+      "border": "--border",
+      "accentSoft": "--accent-soft",
+      "cardShadow": "--card-shadow"
+    },
+    "dark": {
+      "primeNight": "#101217",
+      "primeSurface": "#171a22",
+      "primeRaised": "#202631",
+      "commandCyan": "#38bdf8",
+      "signalIndigo": "#818cf8",
+      "ink": "#f6f7fb",
+      "mutedInk": "#b3bac8",
+      "success": "#10b981",
+      "warning": "#f59e0b"
+    },
+    "light": {
+      "dayCanvas": "#f4f7fb",
+      "daySurface": "#ffffff",
+      "dayRaised": "#eaf0f7",
+      "dayAccent": "#0284c7",
+      "dayIndigo": "#4f46e5",
+      "dayText": "#101827",
+      "dayMuted": "#5e697a"
+    },
+    "usage": [
+      "Use cyan as the main action, active, price, and icon signal.",
+      "Use indigo as gradient depth, not as a competing main color.",
+      "Keep most surfaces neutral so the accents feel premium.",
+      "Use glow sparingly; PrimeCore is technical and premium, not neon."
+    ]
+  },
+  "typographyMeta": {
+    "headingFamily": "Outfit, sans-serif",
+    "bodyFamily": "Inter, sans-serif",
+    "direction": "RTL-first Arabic experience",
+    "scale": {
+      "h1": "clamp(2rem, 5vw, 3.5rem)",
+      "h2": "clamp(1.5rem, 4vw, 2.75rem)",
+      "h3": "clamp(1.25rem, 3vw, 2rem)",
+      "h4": "clamp(1rem, 2.5vw, 1.5rem)",
+      "body": "clamp(0.875rem, 1.5vw, 1.0625rem)",
+      "label": "0.75rem to 0.95rem"
+    },
+    "rules": [
+      "Keep hero headings large and assertive.",
+      "Keep card headings compact.",
+      "Use approximately 1.7 line-height for Arabic paragraphs.",
+      "Avoid negative letter spacing."
+    ]
+  },
+  "radii": {
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px"
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "section": "clamp(3rem, 8vw, 6rem)",
+    "maxWidth": "1280px",
+    "headerHeight": "72px"
+  },
+  "shadows": {
+    "cardDark": "0 14px 32px rgba(0, 0, 0, 0.22), 0 0 24px rgba(56, 189, 248, 0.08)",
+    "cardLight": "0 18px 38px rgba(15, 23, 42, 0.08), 0 0 18px rgba(2, 132, 199, 0.05)",
+    "headerDark": "0 4px 30px rgba(0, 0, 0, 0.3)",
+    "ctaGlow": "0 10px 28px rgba(56, 189, 248, 0.24)"
+  },
+  "motion": {
+    "duration": "0.25s",
+    "easing": "ease",
+    "rules": [
+      "Use subtle hover lifts only where they clarify clickability.",
+      "Transition color, background, border, and shadow between themes.",
+      "Avoid excessive animation and respect reduced-motion preferences."
+    ]
+  },
+  "breakpoints": {
+    "desktopAdjust": "1100px",
+    "tablet": "1024px",
+    "mobile": "768px",
+    "smallMobile": "480px"
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "selector": ".btn.btn-gradient",
+      "purpose": "Main action buttons and premium CTAs.",
+      "tokens": {
+        "background": "--accent-gradient",
+        "color": "#ffffff",
+        "radius": "--radius-sm",
+        "padding": "0.75rem 1.75rem"
+      },
+      "snippet": "<a class=\"btn btn-gradient\" href=\"products.html\">تصفح المنتجات</a>"
+    },
+    {
+      "name": "Header CTA",
+      "selector": ".nav-cta .btn-gradient",
+      "purpose": "High-contrast top-level action in the header.",
+      "tokens": {
+        "background": "linear-gradient(135deg, #0ea5e9 0%, #38bdf8 48%, #6366f1 100%)",
+        "border": "rgba(125, 211, 252, 0.62)",
+        "color": "#ffffff",
+        "radius": "--radius-sm"
+      },
+      "snippet": "<a class=\"btn btn-gradient\" href=\"contact.html\">ابدأ الآن</a>"
+    },
+    {
+      "name": "Outline Button",
+      "selector": ".btn.btn-outline",
+      "purpose": "Secondary action that stays premium and quiet.",
+      "tokens": {
+        "background": "transparent",
+        "color": "--text-primary",
+        "border": "--border",
+        "radius": "--radius-sm"
+      },
+      "snippet": "<a class=\"btn btn-outline\" href=\"contact.html\">اتصل بنا</a>"
+    },
+    {
+      "name": "Standard Card",
+      "selector": ".pc-card",
+      "purpose": "Reusable feature/category/card surface.",
+      "tokens": {
+        "background": "--bg-secondary",
+        "border": "--border",
+        "radius": "--radius-md",
+        "padding": "1.75rem",
+        "hoverShadow": "--card-shadow"
+      },
+      "snippet": "<article class=\"pc-card\"><div class=\"card-icon\"></div><h3 class=\"card-title\">هواتف</h3><p class=\"card-text\">الابتكار بين يديك</p></article>"
+    },
+    {
+      "name": "Package Card",
+      "selector": ".package-card",
+      "purpose": "Detailed internet package pricing card.",
+      "tokens": {
+        "background": "--bg-secondary",
+        "border": "--border",
+        "radius": "--radius-lg",
+        "priceColor": "--accent-primary"
+      },
+      "snippet": "<article class=\"package-card\"><span class=\"pkg-badge\">باقة مميزة</span><h3>ستارلينك Lite</h3><div class=\"pkg-price\">10,000 <span>ريال يمني / شهر</span></div></article>"
+    },
+    {
+      "name": "Service Card",
+      "selector": ".service-card",
+      "purpose": "Technical service offering with WhatsApp action.",
+      "tokens": {
+        "background": "--bg-secondary",
+        "border": "--border",
+        "radius": "--radius-md",
+        "iconBackground": "--accent-soft",
+        "iconColor": "--accent-primary"
+      },
+      "snippet": "<article class=\"service-card\"><div class=\"service-icon\"></div><h3>صيانة وتنظيف</h3><p>تنظيف داخلي وفحص حرارة الجهاز.</p><a class=\"btn btn-outline\" href=\"#\">اطلب الخدمة</a></article>"
+    },
+    {
+      "name": "Form Field",
+      "selector": ".admin-field input, .admin-field select, .admin-field textarea",
+      "purpose": "Owner/admin data entry while preserving brand surfaces.",
+      "tokens": {
+        "background": "--input-bg",
+        "color": "--text-primary",
+        "border": "--border",
+        "radius": "--radius-sm"
+      },
+      "snippet": "<label class=\"admin-field\"><span>اسم المنتج</span><input type=\"text\" /></label>"
+    },
+    {
+      "name": "Theme Toggle",
+      "selector": ".theme-toggle",
+      "purpose": "Compact dark/light mode control.",
+      "tokens": {
+        "background": "transparent",
+        "color": "--text-primary",
+        "hoverBackground": "--accent-soft",
+        "radius": "--radius-sm"
+      },
+      "snippet": "<button class=\"theme-toggle\" type=\"button\" aria-label=\"تبديل الوضع\"></button>"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Precision Showroom",
+    "overview": "PrimeCore should feel like a premium Arabic RTL technology showroom: curated, confident, trustworthy, and bold without becoming noisy.",
+    "personality": [
+      "Premium",
+      "Trustworthy",
+      "Bold"
+    ],
+    "principles": [
+      "Lead with premium confidence.",
+      "Make trust visible before asking for contact.",
+      "Treat Arabic RTL as first-class.",
+      "Be restrained but not timid.",
+      "Preserve operational clarity."
+    ],
+    "dos": [
+      "Use strong hierarchy and confident spacing.",
+      "Keep cyan and blue accents deliberate.",
+      "Keep mobile readable and free of horizontal scroll.",
+      "Preserve dark mode as the main identity while making light mode polished."
+    ],
+    "donts": [
+      "Do not look like a cheap marketplace.",
+      "Do not use generic Bootstrap-like density.",
+      "Do not become childish neon or gaming styled.",
+      "Do not use random AI gradients.",
+      "Do not make low-contrast gray interfaces."
+    ]
+  }
+}
