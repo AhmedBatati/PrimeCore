@@ -124,3 +124,22 @@
 .scroll-indicator {
   animation: scroll-indicator 1.5s ease-in-out infinite alternate;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal.active,
+  .gradient-border::before,
+  .spinner,
+  .glow-pulse,
+  .scroll-indicator {
+    animation: none !important;
+  }
+
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3,
+  .reveal-delay-4,
+  .reveal-delay-5 {
+    animation-delay: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+}

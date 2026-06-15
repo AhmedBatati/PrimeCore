@@ -197,13 +197,6 @@ p {
   border: 1px solid var(--border);
 }
 
-.gradient-text {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -297,11 +290,13 @@ p {
   position: absolute;
   bottom: -2px;
   inset-inline-start: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: var(--accent-gradient);
   border-radius: 2px;
-  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .main-nav a:hover,
@@ -311,7 +306,7 @@ p {
 
 .main-nav a:hover::after,
 .main-nav a.active::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -3932,6 +3927,41 @@ html[data-theme="light"] .service-process-section {
   width: 28px;
   height: 28px;
   fill: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal.active {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .main-nav a::after {
+    transition: none;
+  }
+
+  .whatsapp-float,
+  .whatsapp-float:hover {
+    animation: none;
+    transform: none;
+  }
 }
 
 /* ===== FOOTER ===== */
