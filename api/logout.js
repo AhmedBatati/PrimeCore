@@ -1,4 +1,4 @@
-const { clearSessionCookie } = require('../server/auth');
+const { clearSessionCookie, requireAuth, requireCsrf } = require('../server/auth');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
@@ -9,6 +9,9 @@ module.exports = async function handler(req, res) {
     res.end();
     return;
   }
+
+  if (!requireAuth(req, res)) return;
+  if (!requireCsrf(req, res)) return;
 
   res.statusCode = 200;
   res.setHeader('Set-Cookie', clearSessionCookie(req));

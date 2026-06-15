@@ -64,9 +64,52 @@ function readCookie(req, name) {
   return '';
 }
 
+function getHeader(req, name) {
+  return (req.headers && (req.headers[name] || req.headers[name.toLowerCase()])) || '';
+}
+
+function firstHeaderValue(value) {
+  return String(value || '').split(',')[0].trim();
+}
+
 function isSecureHost(req) {
   var host = req.headers.host || '';
   return !/^localhost(:|$)/.test(host) && !/^127\.0\.0\.1(:|$)/.test(host);
+}
+
+function getRequestOrigin(req) {
+  var host = firstHeaderValue(getHeader(req, 'x-forwarded-host') || getHeader(req, 'host'));
+  var proto = firstHeaderValue(getHeader(req, 'x-forwarded-proto'));
+
+  if (!proto) {
+    proto = isSecureHost(req) ? 'https' : 'http';
+  }
+
+  return host ? proto + '://' + host : '';
+}
+
+function getSubmittedOrigin(req) {
+  var origin = getHeader(req, 'origin');
+  var referer = getHeader(req, 'referer');
+
+  if (origin) return origin;
+
+  if (referer) {
+    try {
+      return new URL(referer).origin;
+    } catch (error) {
+      return '';
+    }
+  }
+
+  return '';
+}
+
+function verifySameOrigin(req) {
+  var expectedOrigin = getRequestOrigin(req);
+  var submittedOrigin = getSubmittedOrigin(req);
+
+  return Boolean(expectedOrigin && submittedOrigin && submittedOrigin === expectedOrigin);
 }
 
 function createSessionToken() {
@@ -125,6 +168,22 @@ function verifyRequest(req) {
   return verifyToken(readCookie(req, COOKIE_NAME));
 }
 
+function createCsrfToken(req) {
+  var token = readCookie(req, COOKIE_NAME);
+  if (!verifyToken(token)) return '';
+  return sign('csrf:' + token);
+}
+
+function verifyCsrfRequest(req) {
+  var token = readCookie(req, COOKIE_NAME);
+  var csrfToken = getHeader(req, 'x-csrf-token');
+
+  if (!verifyToken(token) || !csrfToken) return false;
+  if (!verifySameOrigin(req)) return false;
+
+  return safeEqual(csrfToken, sign('csrf:' + token));
+}
+
 function passwordMatches(input) {
   var password = getPassword();
   if (!password || !input) return false;
@@ -140,12 +199,33 @@ function requireAuth(req, res) {
   return false;
 }
 
+function requireCsrf(req, res) {
+  if (verifyCsrfRequest(req)) return true;
+
+  res.statusCode = 403;
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.end(JSON.stringify({ ok: false, error: 'forbidden' }));
+  return false;
+}
+
+function requireSameOrigin(req, res) {
+  if (verifySameOrigin(req)) return true;
+
+  res.statusCode = 403;
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.end(JSON.stringify({ ok: false, error: 'forbidden' }));
+  return false;
+}
+
 module.exports = {
   COOKIE_NAME,
   clearSessionCookie,
+  createCsrfToken,
   createSessionCookie,
   passwordMatches,
   requireAuth,
+  requireCsrf,
+  requireSameOrigin,
   verifyRequest,
   verifyToken
 };

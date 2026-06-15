@@ -4,6 +4,7 @@
   var defaultProducts = clone(typeof products !== 'undefined' ? products : []);
   var defaultPackages = clone(typeof packages !== 'undefined' ? packages : []);
   var apiAvailable = global.location && global.location.protocol !== 'file:';
+  var csrfToken = '';
 
   function clone(value) {
     return JSON.parse(JSON.stringify(value || []));
@@ -37,6 +38,10 @@
       { 'Content-Type': 'application/json' },
       requestOptions.headers || {}
     );
+
+    if (csrfToken && requestOptions.method && requestOptions.method !== 'GET') {
+      requestOptions.headers['X-CSRF-Token'] = csrfToken;
+    }
 
     return fetch(path, requestOptions).then(function (response) {
       return response.json().catch(function () {
@@ -105,6 +110,9 @@
     return requestJson('/api/login', {
       method: 'POST',
       body: JSON.stringify({ password: password })
+    }).then(function (data) {
+      csrfToken = '';
+      return data;
     });
   }
 
@@ -113,7 +121,10 @@
       return Promise.resolve({ ok: true });
     }
 
-    return requestJson('/api/logout', { method: 'POST' });
+    return requestJson('/api/logout', { method: 'POST' }).then(function (data) {
+      csrfToken = '';
+      return data;
+    });
   }
 
   function session() {
@@ -121,7 +132,11 @@
       return Promise.resolve({ authenticated: false });
     }
 
-    return requestJson('/api/session').catch(function () {
+    return requestJson('/api/session').then(function (data) {
+      csrfToken = data && data.csrfToken ? data.csrfToken : '';
+      return data;
+    }).catch(function () {
+      csrfToken = '';
       return { authenticated: false };
     });
   }

@@ -1,4 +1,4 @@
-const { requireAuth } = require('../server/auth');
+const { requireAuth, requireCsrf } = require('../server/auth');
 const { readData, writeData } = require('../server/content-store');
 
 function readBody(req) {
@@ -31,6 +31,8 @@ module.exports = async function handler(req, res) {
     }
 
     if (req.method === 'PUT') {
+      if (!requireCsrf(req, res)) return;
+
       const payload = JSON.parse(await readBody(req) || '{}');
       const data = await writeData(payload);
       res.statusCode = 200;

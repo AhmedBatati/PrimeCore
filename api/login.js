@@ -1,4 +1,4 @@
-const { createSessionCookie, passwordMatches } = require('../server/auth');
+const { createSessionCookie, passwordMatches, requireSameOrigin } = require('../server/auth');
 const {
   checkLoginRateLimit,
   recordLoginFailure,
@@ -29,6 +29,8 @@ module.exports = async function handler(req, res) {
     res.end();
     return;
   }
+
+  if (!requireSameOrigin(req, res)) return;
 
   if (!process.env.OWNER_PASSWORD || !process.env.OWNER_SESSION_SECRET) {
     res.statusCode = 500;
