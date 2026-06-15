@@ -1,0 +1,14 @@
+.env*
+.vercel/
+.git/
+
+.agents/
+.gemini/
+.impeccable/
+.vscode/
+
+data/
+scripts/
+
+DESIGN.md
+PRODUCT.md

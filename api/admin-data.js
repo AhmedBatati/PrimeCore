@@ -17,13 +17,14 @@ function readBody(req) {
 }
 
 module.exports = async function handler(req, res) {
+  res.setHeader('Cache-Control', 'no-store');
+
   if (!requireAuth(req, res)) return;
 
   try {
     if (req.method === 'GET') {
       const data = await readData();
       res.statusCode = 200;
-      res.setHeader('Cache-Control', 'no-store');
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
       res.end(JSON.stringify(data));
       return;
@@ -33,7 +34,6 @@ module.exports = async function handler(req, res) {
       const payload = JSON.parse(await readBody(req) || '{}');
       const data = await writeData(payload);
       res.statusCode = 200;
-      res.setHeader('Cache-Control', 'no-store');
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
       res.end(JSON.stringify(data));
       return;
