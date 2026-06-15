@@ -35,6 +35,8 @@
     }).catch(function (requestError) {
       if (requestError.status === 500) {
         setError('إعدادات المالك غير مكتملة على الخادم.');
+      } else if (requestError.status === 429) {
+        setError('تم إيقاف المحاولات مؤقتاً. انتظر قليلاً ثم حاول مرة أخرى.');
       } else {
         setError('كلمة المرور غير صحيحة.');
       }
