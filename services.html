@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
 </head>
-<body>
+<body class="services-page">
 
   <!-- ===== HEADER ===== -->
   <header class="site-header" role="banner">
@@ -73,93 +73,167 @@
   </header>
 
   <!-- ===== PAGE HERO ===== -->
-  <section class="page-hero-sm services-hero">
+  <section class="services-hero">
     <div class="container">
-      <div class="reveal">
-        <span class="section-label">خدمات PrimeCore</span>
-        <h1>خدمات تقنية متكاملة لأجهزتك</h1>
-        <p>نعتني بأجهزة الكمبيوتر واللابتوب من التشخيص إلى الإصلاح والترقية، بخدمة واضحة ومرتبة تحافظ على أداء جهازك وتطيل عمره.</p>
-        <div class="services-hero-actions">
-          <a href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد حجز فحص لجهازي." class="btn btn-gradient" target="_blank" rel="noopener noreferrer">احجز فحص الآن</a>
-          <a href="#services-list" class="btn btn-outline">استعرض الخدمات</a>
+      <div class="services-hero-grid">
+        <div class="services-hero-copy reveal">
+          <span class="section-label">خدمات PrimeCore</span>
+          <h1>خدمات تقنية متكاملة لأجهزتك</h1>
+          <p>تشخيص، إصلاح، صيانة، وترقية لأجهزة الكمبيوتر واللابتوب بخدمة محلية واضحة تحافظ على أداء جهازك وتمنحك قرارًا تقنيًا مطمئنًا.</p>
+          <div class="services-hero-actions">
+            <a href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد حجز فحص لجهازي." class="btn btn-gradient" target="_blank" rel="noopener noreferrer">احجز فحص الآن</a>
+            <a href="#services-list" class="btn btn-outline">استعرض الخدمات</a>
+          </div>
+          <div class="services-hero-trust" aria-label="مزايا الخدمة">
+            <span>تشخيص قبل الإصلاح</span>
+            <span>حلول أجهزة وإنترنت</span>
+            <span>دعم محلي مباشر</span>
+          </div>
+        </div>
+
+        <aside class="services-diagnostic-panel reveal reveal-delay-2" aria-label="نظام خدمة PrimeCore">
+          <div class="service-panel-top">
+            <span>PrimeCore Service Desk</span>
+            <strong>جاهزية فحص</strong>
+          </div>
+          <div class="service-panel-core" aria-hidden="true">
+            <span class="service-panel-ring"></span>
+            <span class="service-panel-ring"></span>
+            <div class="service-panel-chip">
+              <span>Device</span>
+              <strong>Healthy</strong>
+            </div>
+          </div>
+          <div class="service-panel-grid">
+            <div>
+              <span>فحص</span>
+              <strong>واضح</strong>
+            </div>
+            <div>
+              <span>تنفيذ</span>
+              <strong>مرتب</strong>
+            </div>
+            <div>
+              <span>تسليم</span>
+              <strong>موثوق</strong>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SERVICES GRID ===== -->
-  <section class="section" id="services-list" style="padding-top: 0;">
+  <section class="section services-catalog-section" id="services-list">
     <div class="container">
+      <div class="services-section-heading reveal">
+        <span class="section-label">مجالات الخدمة</span>
+        <h2>خدمات عملية لجهاز يعمل بثقة</h2>
+        <p>اختر الخدمة الأقرب لحالة جهازك، أو تواصل معنا لوصف المشكلة وسنرشدك للمسار الأنسب بدون تعقيد.</p>
+      </div>
+
       <div class="services-grid">
-        <article class="service-card reveal reveal-delay-1">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18v3h3l6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-2.8-2.8z"/></svg>
+        <article class="service-card service-card-featured reveal reveal-delay-1">
+          <div class="service-card-head">
+            <span class="service-index">إصلاح</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5 5L3 18v3h3l6.7-6.7a4 4 0 0 0 5-5l-2.4 2.4-2.8-2.8z"/></svg>
+            </div>
           </div>
           <h3>تصليح</h3>
           <p>تشخيص أعطال الكمبيوتر واللابتوب ومعالجة مشاكل التشغيل، الشاشة، المنافذ، البطارية، أو الأداء.</p>
+          <div class="service-meta">أعطال هاردوير ونظام</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: تصليح." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
         <article class="service-card reveal reveal-delay-2">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M2 14h4M10 8h4M18 16h4"/></svg>
+          <div class="service-card-head">
+            <span class="service-index">تبريد</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3"/><path d="M2 14h4M10 8h4M18 16h4"/></svg>
+            </div>
           </div>
           <h3>صيانة وتنظيف</h3>
           <p>تنظيف داخلي وخارجي آمن، إزالة الغبار، وفحص التهوية لتحسين الاستقرار وتقليل الضجيج والحرارة.</p>
+          <div class="service-meta">تبريد واستقرار أفضل</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: صيانة وتنظيف." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
         <article class="service-card reveal reveal-delay-3">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2v20M5 7h14M5 17h14"/><rect x="7" y="5" width="10" height="14" rx="2"/></svg>
+          <div class="service-card-head">
+            <span class="service-index">حرارة</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2v20M5 7h14M5 17h14"/><rect x="7" y="5" width="10" height="14" rx="2"/></svg>
+            </div>
           </div>
           <h3>تغيير المعجون الحراري</h3>
           <p>استبدال المعجون الحراري للمعالج أو كرت الشاشة بعناية للمساعدة في خفض الحرارة وتحسين الأداء.</p>
+          <div class="service-meta">حرارة أقل وأداء أثبت</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: تغيير المعجون الحراري." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
         <article class="service-card reveal reveal-delay-4">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="M7 9h10M7 13h6"/></svg>
+          <div class="service-card-head">
+            <span class="service-index">نظام</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="M7 9h10M7 13h6"/></svg>
+            </div>
           </div>
           <h3>تثبيت ويندوز وبرامج</h3>
           <p>تهيئة النظام وتثبيت ويندوز والتعريفات والبرامج الأساسية بطريقة نظيفة ومنظمة.</p>
+          <div class="service-meta">نظام مرتب وجاهز</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: تثبيت ويندوز وبرامج." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
         <article class="service-card reveal reveal-delay-1">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
+          <div class="service-card-head">
+            <span class="service-index">تهيئة</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 4l-4 16"/></svg>
+            </div>
           </div>
           <h3>برمجة وتهيئة</h3>
           <p>إعداد بيئة العمل، ترتيب البرامج، تهيئة الجهاز للاستخدام الدراسي أو المكتبي أو البرمجي.</p>
+          <div class="service-meta">بيئة استخدام جاهزة</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: برمجة وتهيئة." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
         <article class="service-card reveal reveal-delay-2">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M21 21l-7-7"/><path d="M10 2v2M10 16v2M4 10H2M18 10h-2"/></svg>
+          <div class="service-card-head">
+            <span class="service-index">فحص</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M21 21l-7-7"/><path d="M10 2v2M10 16v2M4 10H2M18 10h-2"/></svg>
+            </div>
           </div>
           <h3>فحص البطء والحرارة</h3>
           <p>تحليل أسباب البطء والحرارة، فحص البرامج، التخزين، الرام، والتهوية قبل اقتراح الحل المناسب.</p>
+          <div class="service-meta">تشخيص قبل القرار</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: فحص البطء والحرارة." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
         <article class="service-card reveal reveal-delay-3">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M9 19v3M15 19v3M9 2v3M15 2v3"/></svg>
+          <div class="service-card-head">
+            <span class="service-index">ترقية</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M9 19v3M15 19v3M9 2v3M15 2v3"/></svg>
+            </div>
           </div>
           <h3>ترقية RAM/SSD</h3>
           <p>اقتراح وتركيب ترقية مناسبة للرام أو SSD لتحسين سرعة الإقلاع وفتح البرامج والتنقل بين المهام.</p>
+          <div class="service-meta">ترقية محسوبة</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: ترقية RAM/SSD." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
 
-        <article class="service-card reveal reveal-delay-4">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M9 9h6M9 13h4"/></svg>
+        <article class="service-card service-card-consult reveal reveal-delay-4">
+          <div class="service-card-head">
+            <span class="service-index">استشارة</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M9 9h6M9 13h4"/></svg>
+            </div>
           </div>
           <h3>استشارة تقنية</h3>
           <p>مساعدة في اختيار جهاز، ترقية، أو حل مناسب حسب استخدامك وميزانيتك بدون تعقيد.</p>
+          <div class="service-meta">قرار أوضح قبل الشراء</div>
           <a class="btn btn-outline service-cta" href="https://wa.me/967781318564?text=مرحباً PrimeCore، أريد طلب خدمة: استشارة تقنية." target="_blank" rel="noopener noreferrer">اطلب الخدمة</a>
         </article>
       </div>
@@ -167,27 +241,27 @@
   </section>
 
   <!-- ===== PROCESS ===== -->
-  <section class="section" style="background: var(--bg-secondary);">
+  <section class="section service-process-section">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="services-section-heading reveal">
         <span class="section-label">الخطوات</span>
-        <h2>كيف تتم <span class="gradient-text">الخدمة؟</span></h2>
+        <h2>كيف تتم الخدمة؟</h2>
         <p>عملية واضحة من أول رسالة حتى استلام الجهاز، حتى تعرف ما الذي يحدث في كل خطوة.</p>
       </div>
 
       <div class="service-steps">
         <div class="service-step reveal reveal-delay-1">
-          <span>01</span>
+          <span>استقبال</span>
           <h3>تواصل ووصف المشكلة</h3>
           <p>أرسل لنا نوع الجهاز والمشكلة أو صورة للخطأ، ونحدد أفضل مسار للفحص.</p>
         </div>
         <div class="service-step reveal reveal-delay-2">
-          <span>02</span>
+          <span>تشخيص</span>
           <h3>فحص وتشخيص</h3>
           <p>نفحص الجهاز ونوضح السبب والحل والتكلفة قبل البدء بأي إجراء.</p>
         </div>
         <div class="service-step reveal reveal-delay-3">
-          <span>03</span>
+          <span>تسليم</span>
           <h3>تنفيذ وتسليم</h3>
           <p>ننفذ الخدمة بعناية، ثم نختبر الجهاز ونشاركك النتيجة بوضوح.</p>
         </div>
@@ -196,24 +270,27 @@
   </section>
 
   <!-- ===== WHY PRIMECORE ===== -->
-  <section class="section">
+  <section class="section services-proof-section">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="services-section-heading reveal">
         <span class="section-label">لماذا PrimeCore؟</span>
-        <h2>خدمة مرتبة <span class="gradient-text">وموثوقة</span></h2>
+        <h2>خدمة مرتبة وموثوقة</h2>
         <p>نركز على تشخيص واضح، قطع وترقيات مناسبة، وتجربة مريحة بدون مبالغة أو وعود غير دقيقة.</p>
       </div>
 
       <div class="service-proof-grid">
-        <div class="pc-card reveal reveal-delay-1">
+        <div class="service-proof-card reveal reveal-delay-1">
+          <span>وضوح</span>
           <h3 class="card-title">تشخيص قبل الإصلاح</h3>
           <p class="card-text">لا نبدأ بالحل قبل فهم السبب، حتى لا تدفع على خدمة لا تحتاجها.</p>
         </div>
-        <div class="pc-card reveal reveal-delay-2">
+        <div class="service-proof-card reveal reveal-delay-2">
+          <span>عناية</span>
           <h3 class="card-title">تنفيذ نظيف</h3>
           <p class="card-text">ترتيب، عناية بالتفاصيل، وفحص بعد الخدمة للتأكد من استقرار الجهاز.</p>
         </div>
-        <div class="pc-card reveal reveal-delay-3">
+        <div class="service-proof-card reveal reveal-delay-3">
+          <span>ملاءمة</span>
           <h3 class="card-title">توصية مناسبة</h3>
           <p class="card-text">نقترح ما يناسب استخدامك، سواء كان إصلاحًا بسيطًا أو ترقية فعلية.</p>
         </div>
